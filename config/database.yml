@@ -1,0 +1,47 @@
+# *****************== Postgresql ==********************
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password: root
+
+development:
+  <<: *default
+  database: customize_devise_auth_development
+
+test:
+  <<: *default
+  database: customize_devise_auth_test
+
+production:
+  <<: *default
+  database: customize_devise_auth_production
+  username: customize_devise_auth
+  password: <%= ENV['CUSTOMIZE_DEVISE_AUTH_DATABASE_PASSWORD'] %>
+
+# *****************== Mysql ==********************
+
+# default: &default
+#   adapter: mysql2
+#   encoding: utf8
+#   pool: 5
+#   host: localhost
+#   socket: /var/run/mysqld/mysqld.sock
+#   username: root
+#   password: root  
+
+# development:
+#   <<: *default
+#   database: customize_devise_auth_development
+
+# test:
+#   <<: *default
+#   database: customize_devise_auth_test
+# production:
+#   <<: *default
+#   database: <%= ENV['DATABASE_URL'] %>
+#   username: <%= ENV['DATABASE_USERNAME'] %>
+#   password: <%= ENV['DATABASE_PASSWORD'] %>
