@@ -5,9 +5,11 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'bootstrap-sass', '~> 3.3.7'
+gem 'bootstrap-sass', '3.2.0.2'
 gem 'devise'
 gem 'slim'
+gem 'font-awesome-rails'
+gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use mysql as the database for Active Record
