@@ -1,0 +1,7 @@
+$('.error').html('');
+$('.has-error').removeClass('has-error');
+<% resource.errors.each do |selector, error| %>
+	<% if resource.errors[selector].first == error %>
+		$('<%=".#{selector}_txt"%>').addClass('has-error').next('.error').html('<%=error.to_s%>');
+	<% end %>	
+<% end %>

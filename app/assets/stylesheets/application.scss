@@ -101,10 +101,6 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: none;
 }
 
-.navbar-toggle {
-  background-color: #000;
-}
-
 a#scrollUp {
   bottom: 0px;
   right: 10px;
@@ -190,3 +186,15 @@ a#scrollUp i{
   padding-left: 0;
 }
 
+.error {
+  color: #ee0000;
+  text-align: left;
+}
+
+input:invalid, textarea:invalid, select:invalid {
+  color: #ee0000;
+  border-color: #ee0000;
+  &:focus {
+    border-color: darken(#ee0000, 10%);  
+  }
+}

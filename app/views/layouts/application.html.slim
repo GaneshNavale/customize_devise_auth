@@ -7,13 +7,14 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
-  body
+  body  
     - unless user_signed_in?
       = render template: 'layouts/user_login_modal'
     .container
       .row
         .col-sm-12
           .shop-menu.pull-right
+           .flash_messages
             ul.nav.navbar-nav
               li
                 a[href="#"]
@@ -25,3 +26,8 @@ html
                 - else 
                   = link_to fa_icon('lock', text: 'Sign In'), new_user_session_path, remote: true 
     = yield
+
+
+    <section>
+
+    </section>
