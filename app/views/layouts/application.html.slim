@@ -14,20 +14,19 @@ html
       .row
         .col-sm-12
           .shop-menu.pull-right
-           .flash_messages
             ul.nav.navbar-nav
-              li
-                a[href="#"]
-                  i.fa.fa-user
-                  |  Account
-              li 
-                - if user_signed_in? 
-                  = link_to 'Sign Out', destroy_user_session_path, method: :delete 
-                - else 
-                  = link_to fa_icon('lock', text: 'Sign In'), new_user_session_path, remote: true 
+              li.sign_out class= ("hide" unless user_signed_in?)
+                = link_to 'Sign Out', destroy_user_session_path, method: :delete 
+              li.sign_in class= ("hide" if user_signed_in?)
+                = link_to fa_icon('lock', text: 'Sign In'), new_user_session_path, remote: true 
+              li.sign_up class= ("hide" if user_signed_in?)
+                = link_to fa_icon('user-plus', text: 'Sign Up'), new_user_registration_path, remote: true
+      .row.flash_messages
+        - flash.each do |key, value|
+          |  <div class="alert alert-
+          = key
+          | "> 
+          button.close[type="button" data-dismiss="alert"]
+            | ×
+          = value
     = yield
-
-
-    <section>
-
-    </section>

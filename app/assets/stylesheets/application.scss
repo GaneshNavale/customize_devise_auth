@@ -17,184 +17,241 @@
 @import "bootstrap";
 @import "font-awesome";
 
-
+$white_color: #ffffff;
+$black_color: #000;
+$gray_color: #696763;
+$red_color: #ee0000;
+$font_family_1: 'Roboto', sans-serif;
 $orange_color: #ff8627;
 
-.bt-login,.bt-login:hover, .bt-login:active, .bt-login:focus {
+/*************************
+*******login page CSS******
+**************************/
+.bt-login {
+  background-color: $orange_color;
+  color: $white_color;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  transition: background-color 300ms linear 0s;
+  &:hover {
     background-color: $orange_color;
-    color: #ffffff;
+    color: $white_color;
     padding-bottom: 10px;
     padding-top: 10px;
     transition: background-color 300ms linear 0s;
+  }
+  &:active {
+    background-color: $orange_color;
+    color: $white_color;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    transition: background-color 300ms linear 0s;
+  }
+  &:focus {
+    background-color: $orange_color;
+    color: $white_color;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    transition: background-color 300ms linear 0s;
+  }
 }
-
 .login-tab {
-	margin: 0 auto;
-	max-width: 380px;
+  margin: 0 auto;
+  max-width: 380px;
 }
-
 .login-modal-header {
-	background: #27ae60;
-	color: #fff;
+  background: #27ae60;
+  color: $white_color;
+  .modal-title {
+    color: $white_color;
+  }
+  .close {
+    color: $white_color;
+  }
 }
-
-.login-modal-header .modal-title {
-	color: #fff;
+.login-modal {
+  i {
+    color: $black_color;
+  }
+  form {
+    max-width: 340px;
+  }
 }
-
-.login-modal-header .close {
-	color: #fff;
+.tab-pane {
+  form {
+    margin: 0 auto;
+  }
 }
-
-.login-modal i {
-	color: #000;
+.login-modal-footer {
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
-
-.login-modal form {
-	max-width: 340px;
-}
-
-.tab-pane form {
-	margin: 0 auto;
-}
-.login-modal-footer{
-	margin-top:15px;
-	margin-bottom:15px;
-}
-
-
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: $font_family_1;
   background: #fff;
   position: relative;
-  font-weight:400px;
+  font-weight: 400px;
 }
-
-ul li {
-  list-style: none;
+ul {
+  li {
+    list-style: none;
+  }
 }
-
-a:hover {
-outline: none;
-text-decoration:none;
-}
-
-a:focus {
-  outline:none;
-  outline-offset: 0;
-}
-
 a {
+  &:hover {
+    outline: none;
+    text-decoration: none;
+  }
+  &:focus {
+    outline: none;
+    outline-offset: 0;
+  }
   -webkit-transition: 300ms;
   -moz-transition: 300ms;
-    -o-transition: 300ms;
-    transition: 300ms;
+  -o-transition: 300ms;
+  transition: 300ms;
 }
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Roboto', sans-serif;
+h1, h2, h3, h4, h5,h6 {
+  font-family: $font_family_1;
 }
-
-.btn:hover,
-.btn:focus{
-  outline: none;
-  box-shadow: none;
+.btn {
+  &:hover {
+    outline: none;
+    box-shadow: none;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
 }
-
 a#scrollUp {
   bottom: 0px;
   right: 10px;
   padding: 5px 10px;
   background: $orange_color;
-  color: #FFF;
+  color: $white_color;
   -webkit-animation: bounce 2s ease infinite;
   animation: bounce 2s ease infinite;
+  i {
+    font-size: 30px;
+  }
 }
-
-a#scrollUp i{
-  font-size: 30px;
-}
-
-
-
-/*************************
-*******login page CSS******
-**************************/
-
 #form {
   display: block;
   margin-bottom: 185px;
   margin-top: 185px;
   overflow: hidden;
 }
-
-.login-form h2, .signup-form h2 {
-  color: #696763;
-  font-family: 'Roboto', sans-serif;
-  font-size: 20px;
-  font-weight: 300;
-  margin-bottom: 30px;
+.login-form {
+  h2 {
+    color: $gray_color;
+    font-family: $font_family_1;
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 30px;
+  }
+  form {
+    input {
+      background: #F0F0E9;
+      border: medium none;
+      color: $gray_color;
+      display: block;
+      font-family: $font_family_1;
+      font-size: 14px;
+      font-weight: 300;
+      height: 40px;
+      margin-bottom: 10px;
+      outline: medium none;
+      padding-left: 10px;
+      width: 100%;
+    }
+    span {
+      line-height: 25px;
+      input {
+        width: 15px;
+        float: left;
+        height: 15px;
+        margin-right: 5px;
+      }
+    }
+    button {
+      margin-top: 23px;
+      background: $orange_color;
+      border: medium none;
+      border-radius: 0;
+      color: $white_color;
+      display: block;
+      font-family: $font_family_1;
+      padding: 6px 25px;
+    }
+  }
+  label {
+    input {
+      border: medium none;
+      display: inline-block;
+      height: 0;
+      margin-bottom: 0;
+      outline: medium none;
+      padding-left: 0;
+    }
+  }
 }
-
-
-.login-form form input, .signup-form form input {
-  background: #F0F0E9;
-  border: medium none;
-  color: #696763;
-  display: block;
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  font-weight: 300;
-  height: 40px;
-  margin-bottom: 10px;
-  outline: medium none;
-  padding-left: 10px;
-  width: 100%;
+.signup-form {
+  h2 {
+    color: $gray_color;
+    font-family: $font_family_1;
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 30px;
+  }
+  form {
+    input {
+      background: #F0F0E9;
+      border: medium none;
+      color: $gray_color;
+      display: block;
+      font-family: $font_family_1;
+      font-size: 14px;
+      font-weight: 300;
+      height: 40px;
+      margin-bottom: 10px;
+      outline: medium none;
+      padding-left: 10px;
+      width: 100%;
+    }
+    button {
+      background: $orange_color;
+      border: medium none;
+      border-radius: 0;
+      color: $white_color;
+      display: block;
+      font-family: $font_family_1;
+      padding: 6px 25px;
+    }
+  }
 }
-
-.login-form form span{
-  line-height: 25px;
-}
-
-.login-form form span input {
-  width: 15px;
-  float: left;
-  height: 15px;
-  margin-right: 5px;
-}
-
-.login-form form button {
-  margin-top: 23px;
-}
-
-.login-form form button, .signup-form form button {
-  background: $orange_color;
-  border: medium none;
-  border-radius: 0;
-  color: #FFFFFF;
-  display: block;
-  font-family: 'Roboto', sans-serif;
-  padding: 6px 25px;
-}
-
-.login-form label input {
-  border: medium none;
-  display: inline-block;
-  height: 0;
-  margin-bottom: 0;
-  outline: medium none;
-  padding-left: 0;
-}
-
 .error {
-  color: #ee0000;
+  color: $red_color;
   text-align: left;
 }
-
-input:invalid, textarea:invalid, select:invalid {
-  color: #ee0000;
-  border-color: #ee0000;
-  &:focus {
-    border-color: darken(#ee0000, 10%);  
+input, select, textarea {
+  &:invalid {
+    color: $red_color;
+    border-color: $red_color;
+    &:focus { 
+      border-color: darken(#ee0000, 10%);
+    }
   }
+}
+
+.alert-success, .alert-notice {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #3c763d;
+}
+
+.alert-danger, .alert-error {
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    color: #a94442;
 }

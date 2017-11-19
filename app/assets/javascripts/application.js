@@ -10,9 +10,14 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
-//= require turbolinks
-//= require_tree .
-//= require bootstrap-sprockets
 //= require jquery
+//= require turbolinks
+//= require jquery_ujs
+//= require_tree .
 //= require bootstrap
+
+$(function() {
+	$('.login-tab li a, .login-modal button.close').on('click', function() {
+		$('.devise_error_messages').html('');
+	});
+});
