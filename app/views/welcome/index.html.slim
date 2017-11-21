@@ -1,0 +1,13 @@
+.container.section-layout
+  .row.col-sm-12
+    ul.nav.navbar-nav
+      li.sign_out class= ("hide" unless user_signed_in?)
+        = link_to 'Sign Out', destroy_user_session_path, method: :delete 
+      li.sign_in class= ("hide" if user_signed_in?)
+        = link_to fa_icon('lock', text: 'Sign In'), new_user_session_path, remote: true 
+      li.sign_up class= ("hide" if user_signed_in?)
+        = link_to fa_icon('user-plus', text: 'Sign Up'), new_user_registration_path, remote: true	
+br  
+.container.section-layout.description.text-center
+  .row.col-sm-12
+		h3 This is an example of Customize Devise Authentication using Bootstrap Modals

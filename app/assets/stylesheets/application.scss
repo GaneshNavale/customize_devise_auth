@@ -255,3 +255,23 @@ input, select, textarea {
     border-color: #ebccd1;
     color: #a94442;
 }
+
+/*************************
+*login page CSS ends here*
+**************************/
+
+.section-layout {
+    box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 700px;
+    width: 100%;
+}
+
+.description {
+  height: 300px;
+  background: #EEEEEE;
+}
+
+.description h3 {
+  margin-top: 125px;
+}
